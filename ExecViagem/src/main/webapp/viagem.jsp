@@ -15,44 +15,23 @@
 	<br />
 	<div align="center" class="container">
 		<form action="viagem" method="post">
-			<p class="title">
-				<b>Viagens</b>
-			</p>
 			<table>
 				<tr>
-					<td colspan="3">
+					<td align="center">
 						<input class="input_data_id" type="number" min="0"
 							step="1" id="id" name="id" placeholder="#COD"
-							value='<c:out value="${viagem.codigo }"></c:out>'>
-					
-						<input class="input_data_placa" type="text" id="nome" name="nome"
-							placeholder="Placa" 
-							value='<c:out value="${viagem.destino }"></c:out>'>
+							>
 					</td>
 				</tr>
-				<tr>
-					<td colspan="4">
-						<input class="input_data" type="text" id="nome" name="nome"
-							placeholder="Destino"
-							value='<c:out value="${viagem.destino }"></c:out>'>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="4">
-						<input class="input_data" type="text" id="nome" name="nome"
-							placeholder="Nome do motorista"
-							value='<c:out value="${viagem.destino }"></c:out>'>
-					</td>
-				</tr>
-				
 				<tr>
 					<td>
 						<input type="submit" id="botao" name="botao" value="Descrição Viagem">
 					</td>
+					<tr>
 					<td>
 						<input type="submit" id="botao" name="botao" value="Descrição Ônibus">
 					</td>
-				</tr>
+					</tr>
 			</table>
 		</form>
 	</div>
@@ -69,28 +48,57 @@
 	</div>
 	<br />
 	<br />
-	<div align="left">
-		<c:if test="${not empty viagens }">
+	<div align="center">
+		<c:if test="${not empty viagem }">
 			<table>
-				<thead>
-					<tr>
-						<th><b>#CODIGO</b></th>
-						<th><b>PLACA</b></th>
-						<th><b>CHEGADA</b></th>
-						<th><b>SAIDA</b></th>
-						<th><b>PARTIDA</b></th>
-						<th><b>DESTINO</b></th>
-					</tr>
-				</thead>
-				<tbody>
-				<c:forEach items="${viagens }" var="m">
-					<tr>
-						<td><c:out value="${v.codigo }" /></td>
-					</tr>
-				</c:forEach>
-				</tbody>
+					<thead>
+						<tr>
+							<th><b>#COD</b></th>
+							<th><b>PLACA</b></th>
+							<th><b>SAIDA</b></th>
+							<th><b>CHEGADA</b></th>
+							<th><b>PARTIDA</b></th>
+							<th><b>DESTINO</b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><c:out value="${viagem.codigo}" /></td>
+							<td><c:out value="${viagem.onibus.placa}" /></td>
+							<td><c:out value="${viagem.hr_saida }" /></td>
+							<td><c:out value="${viagem.hr_chegada }" /></td>
+							<td><c:out value="${viagem.partida }" /></td>
+							<td><c:out value="${viagem.destino }" /></td>
+						</tr>
+					</tbody>
 			</table>
-		</c:if>
+		</c:if>		
+	</div>
+	<div align="center">
+		<c:if test="${not empty onibus }">
+			<table>
+					<thead>
+						<tr>
+							<th><b>#COD</b></th>
+							<th><b>NOME</b></th>
+							<th><b>PLACA</b></th>
+							<th><b>MARCA</b></th>
+							<th><b>ANO</b></th>
+							<th><b>DESCRICAO</b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><c:out value="${viagem.codigo}" /></td>
+							<td><c:out value="${viagem.motorista.nome}" /></td>
+							<td><c:out value="${viagem.onibus.placa }" /></td>
+							<td><c:out value="${viagem.onibus.marca }" /></td>
+							<td><c:out value="${viagem.onibus.ano }" /></td>
+							<td><c:out value="${viagem.onibus.descricao }" /></td>
+						</tr>
+					</tbody>
+			</table>
+		</c:if>		
 	</div>
 </body>
 </html>

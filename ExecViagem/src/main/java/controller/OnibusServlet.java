@@ -55,9 +55,9 @@ public class OnibusServlet extends HttpServlet {
 	private Onibus valido(String id, String nome, String botao) throws IOException {
 		Onibus o = new Onibus();
 		
-		if (botao.equals("Buscar")) {
+		if (botao.equals("Descrição Ônibus")) {
 			if (id.equals("")) {
-				throw new IOException("Preencher ID");
+				throw new IOException("Preencher Código");
 			} else {
 				o.setPlaca(id);
 			}

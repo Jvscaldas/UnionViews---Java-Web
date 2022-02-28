@@ -11,8 +11,7 @@
 	<nav id="menu">
 		<ul>
 			<li><a href="index.jsp">Home</a> 
-			<li><a href="onibus.jsp">Onibus</a>
-			<li><a href="viagem.jsp">Viagem</a> 
+			<li><a href="viagem.jsp">Descrições</a> 
 		</ul>
 	</nav>
 </body>

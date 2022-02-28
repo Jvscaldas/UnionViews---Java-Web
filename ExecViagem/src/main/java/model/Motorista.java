@@ -32,7 +32,8 @@ public class Motorista {
 
 	@Override
 	public String toString() {
-		return "Motorista [codigo=" + codigo + ", nome=" + nome + ", naturalidade=" + naturalidade + "]";
+		return nome;
+		//		return "Motorista [codigo=" + codigo + ", nome=" + nome + ", naturalidade=" + naturalidade + "]";
 	}
 
 }
